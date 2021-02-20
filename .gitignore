@@ -9,7 +9,7 @@ pom.xml.versionsBackup
 target
 # BlueJ files
 *.ctxt
-tomcat*
+tomcat.8080
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
