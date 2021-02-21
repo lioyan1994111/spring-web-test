@@ -4,6 +4,7 @@ import org.apache.catalina.connector.Connector;
 import org.apache.catalina.connector.CoyoteAdapter;
 import org.apache.catalina.util.LifecycleMBeanBase;
 import org.apache.coyote.http11.Http11NioProtocol;
+import org.apache.tomcat.util.net.AbstractEndpoint;
 
 /**
  * {@linkplain Connector}
@@ -40,7 +41,6 @@ public class ConnectorStu {
      * 1、创建 {@linkplain CoyoteAdapter} 对象
      * 2、在 protocolHandler 中设置 CoyoteAdapter
      * 3、执行 protocolHandler 的init见：{@linkplain Http11NioProtocolStu#init()}
-     *
      *
      *
      */
