@@ -28,4 +28,13 @@ public class StandardServiceStu {
     public void  initInternal(){
 
     }
+
+    /***
+     * 同上
+     *
+     *
+     */
+    public void  startInternal(){
+
+    }
 }

@@ -1,5 +1,6 @@
 package tomcat.connector;
 
+import org.apache.coyote.http11.AbstractHttp11Protocol;
 import org.apache.tomcat.util.net.NioEndpoint;
 
 /**
@@ -22,6 +23,29 @@ public class NioEndpointStu {
      *
      */
     public void  init(){
+
+    }
+
+    /**
+     * {@linkplain NioEndpoint#startInternal()}
+     * 1、创建线程池 {@linkplain NioEndpoint#createExecutor()}
+     * 2、创建 {@linkplain NioEndpoint.Poller}并异步执行 {@linkplain NioEndpoint.Poller#run()}
+     *
+     *
+     */
+    public void start(){
+
+    }
+
+    /**
+     * {@linkplain NioEndpoint.Poller}
+     * 构造函数 this.selector = Selector.open();
+     *
+     *
+     *
+     *
+     */
+    public static class Poller{
 
     }
 }

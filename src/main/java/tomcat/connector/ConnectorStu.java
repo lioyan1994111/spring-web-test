@@ -7,18 +7,13 @@ import org.apache.coyote.http11.Http11NioProtocol;
 
 /**
  * {@linkplain Connector}
- *
+ * <p>
  * 继承 {@linkplain LifecycleMBeanBase}复合生命周期。
  * 会执行初始化方法： initInternal
  * start 方法： startInternal
- *
+ * <p>
  * 一个 Connector可以与一个 Service 关联
  * 通过 Tomcat t = new Tomcat();  t.getService().addConnector(connector);
- *
- *
- *
- *
- *
  *
  * @author top.lioyan
  * @version 1.0
@@ -49,7 +44,19 @@ public class ConnectorStu {
      *
      *
      */
-    public void initInternal(){
+    public void initInternal() {
+
+
+    }
+
+    /**
+     *
+     * {@linkplain Connector#startInternal()}
+     * 执行 protocolHandler 的init见：{@linkplain Http11NioProtocolStu#start()}
+     * protocolHandler
+     *
+     */
+    public void startInternal() {
 
 
     }
