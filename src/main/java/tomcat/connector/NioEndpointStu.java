@@ -2,11 +2,9 @@ package tomcat.connector;
 
 import com.sun.xml.internal.bind.v2.TODO;
 import org.apache.coyote.http11.AbstractHttp11Protocol;
-import org.apache.tomcat.util.net.AbstractEndpoint;
-import org.apache.tomcat.util.net.Acceptor;
-import org.apache.tomcat.util.net.NioChannel;
-import org.apache.tomcat.util.net.NioEndpoint;
+import org.apache.tomcat.util.net.*;
 
+import java.nio.channels.SelectionKey;
 import java.nio.channels.SocketChannel;
 
 /**
@@ -65,9 +63,14 @@ public class NioEndpointStu {
     public static class PollerStu{
 
         /**
-         * //TODO 待补充
-         *  {@linkplain NioEndpoint.Poller#run()}
          *
+         *  {@linkplain NioEndpoint.Poller#run()}
+         * 1、调用events，当队列中有请求事件时，将该事件注册到selector 中 以 OP_READ 事件。并出站
+         * 2、当selector 有事件时调用 {@linkplain NioEndpoint.Poller#processKey(SelectionKey, NioEndpoint.NioSocketWrapper)}处理
+         * 3、调用{@linkplain AbstractEndpoint#processSocket(SocketWrapperBase, SocketEvent, boolean)} 处理
+         *      封装为{@linkplain SocketProcessorBase}
+         *      开启新的线程 Executor executor = getExecutor();
+         *      处理请求
          *
          *
          */
