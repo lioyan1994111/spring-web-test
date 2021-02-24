@@ -31,4 +31,20 @@ public class TestRest {
     }
 
 
+    /**
+     * 查看所有的员工信息
+     *
+     * @return
+     */
+    @GetMapping("/id1/dd")
+    public List<String> list() {
+        List<String> a = new ArrayList<>();
+        a.add("1");
+        a.add("2");
+        a.add("3");
+        a.add("4");
+        return a;
+    }
+
+
 }

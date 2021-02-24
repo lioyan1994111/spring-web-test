@@ -22,8 +22,8 @@ public class RequestMappingInfoStu {
      * 1、判断成员变量 pathPatternsCondition 和 patternsCondition 返回为 RequestCondition对象
      *  根据 conf 的 patternParser 来判断 {@linkplain PathPatternsRequestCondition} 或者 {@linkplain PatternsRequestCondition} 默认第二个
      *      其中paths 为 RequestMapping注解的路径
-     * 2、调用其方法 getDirectPaths或者 getDirectPaths //TODO PatternsRequestCondition 解析
-     *
+     * 2、调用其方法 getDirectPaths或者 getDirectPaths
+     *见{@linkplain PatternsRequestConditionStu#getDirectPaths()}
      *
      *
      *
@@ -57,7 +57,8 @@ public class RequestMappingInfoStu {
      * {@linkplain RequestMappingInfo#getMatchingCondition(HttpServletRequest)}
      *
      * 1、先判断 请求类型
-     * 2、PatternsRequestCondition 的  getMatchingCondition方法 //TODO PatternsRequestCondition 解析
+     * 2、PatternsRequestCondition 的  getMatchingCondition方法
+     * 见{@linkplain PatternsRequestConditionStu#getMatchingCondition()}
      *
      *
      */
