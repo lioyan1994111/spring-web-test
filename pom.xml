@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>spring-web-test</artifactId>
-    <version>v1.0.9</version>
+    <version>v1.0.10</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
