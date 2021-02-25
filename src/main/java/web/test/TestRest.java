@@ -1,12 +1,10 @@
 package web.test;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -23,7 +21,7 @@ public class TestRest {
     public List<String> list(@PathVariable String id) {
         List<String> a = new ArrayList<>();
         a.add("1");
-        a.add("2");
+         a.add("2");
         a.add("3");
         a.add("4");
         a.add(id);
@@ -36,15 +34,17 @@ public class TestRest {
      *
      * @return
      */
-    @GetMapping("/id1/dd")
-    public List<String> list() {
+    @GetMapping("/param")
+    public List<String> param(@RequestParam String test) {
         List<String> a = new ArrayList<>();
-        a.add("1");
-        a.add("2");
-        a.add("3");
-        a.add("4");
+        a.add("test");
         return a;
     }
-
+    @GetMapping("/param2")
+    public List<String> param(@RequestBody Map<String,Object> test) {
+        List<String> a = new ArrayList<>();
+        a.add("test");
+        return a;
+    }
 
 }
