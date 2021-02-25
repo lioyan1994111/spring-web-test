@@ -1,7 +1,9 @@
 package web.handlerAdapter;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.config.BeanExpressionResolver;
 import org.springframework.core.MethodParameter;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.support.WebDataBinderFactory;
@@ -13,6 +15,9 @@ import org.springframework.web.method.annotation.RequestParamMethodArgumentResol
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.method.annotation.PathVariableMapMethodArgumentResolver;
+import org.springframework.web.servlet.mvc.method.annotation.PathVariableMethodArgumentResolver;
+import org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor;
 
 import javax.servlet.http.Part;
 
@@ -67,6 +72,16 @@ public class HandlerMethodArgumentResolverStu {
         public void resolveArgument(){
             
         }
+
+        /**
+         * {@linkplain PathVariableMethodArgumentResolver#updateNamedValueInfo(MethodParameter, AbstractNamedValueMethodArgumentResolver.NamedValueInfo)}
+         *
+         * 注解中没有name时， 使用字段名
+         *
+         */
+        public void updateNamedValueInfo(){
+
+        }
         
         
         /**
@@ -99,23 +114,58 @@ public class HandlerMethodArgumentResolverStu {
 
 
             }
-            /**
-             * {@linkplain RequestParamMethodArgumentResolver#updateNamedValueInfo(MethodParameter, AbstractNamedValueMethodArgumentResolver.NamedValueInfo)}
-             *
-             * 注解中没有name时， 使用字段名
-             *
-             */
-            public void updateNamedValueInfo(){
 
-            }
             /**
              * {@linkplain RequestParamMethodArgumentResolver#resolveName(String, MethodParameter, NativeWebRequest)}
-             * //TODO
+             *  //TODO 文件处理
+             *  其他 request.getParameterValues
              *
              */
             public void resolveName(){
 
             }
+        }
+
+        /***
+         * {@linkplain PathVariableMethodArgumentResolver}
+         *
+         *
+         */
+        public static class PathVariableMethodArgumentResolverStu{
+            /**
+             * {@linkplain PathVariableMethodArgumentResolver#supportsParameter(MethodParameter)}
+             * 1、以{@linkplain PathVariable} 修饰时，如果时Map类型，必须有name，其他不需要
+
+             *
+             *
+             */
+            public void supportsParameter(){
+
+            }
+
+            /**
+             * {@linkplain PathVariableMethodArgumentResolver#createNamedValueInfo(MethodParameter)}
+             * 针对 PathVariable 注解解析
+             *
+             */
+            public void createNamedValueInfo(){
+
+
+            }
+
+            /**
+             * {@linkplain PathVariableMethodArgumentResolver#resolveName(String, MethodParameter, NativeWebRequest)}
+             * 在org.springframework.web.servlet.HandlerMapping.uriTemplateVariables 中已经将所有内容解析了
+             *
+             *
+             *
+             *
+             */
+            public void resolveName(){
+
+            }
+
+
         }
 
     }
@@ -140,7 +190,8 @@ public class HandlerMethodArgumentResolverStu {
 
         /**
          * {@linkplain RequestParamMapMethodArgumentResolver#resolveArgument(MethodParameter, ModelAndViewContainer, NativeWebRequest, WebDataBinderFactory)}
-         *
+         * //TODO 文件部分
+         * 将所有键值对存储
          *
          */
         public void resolveArgument(){
@@ -149,5 +200,23 @@ public class HandlerMethodArgumentResolverStu {
 
     }
 
+    /**
+     * {@linkplain PathVariableMapMethodArgumentResolver}
+     * PathVariable 对map的兼容
+     *
+     *
+     */
+    public static class PathVariableMapMethodArgumentResolverStu{
+
+    }
+    /**
+     * {@linkplain RequestResponseBodyMethodProcessor}
+     * PathVariable 对map的兼容
+     *
+     *
+     */
+    public static class RequestResponseBodyMethodProcessorStu{
+
+    }
 
 }

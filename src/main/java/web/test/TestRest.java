@@ -35,13 +35,13 @@ public class TestRest {
      * @return
      */
     @GetMapping("/param")
-    public List<String> param(@RequestParam String test) {
+    public List<String> param1(@RequestParam("test") Map<String,Object> test) {
         List<String> a = new ArrayList<>();
         a.add("test");
         return a;
     }
     @GetMapping("/param2")
-    public List<String> param(@RequestBody Map<String,Object> test) {
+    public List<String> param(@RequestParam Map<String,Object> test) {
         List<String> a = new ArrayList<>();
         a.add("test");
         return a;
