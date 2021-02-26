@@ -1,6 +1,5 @@
 package web.handlerAdapter;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.config.BeanExpressionResolver;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -211,7 +210,6 @@ public class HandlerMethodArgumentResolverStu {
     }
     /**
      * {@linkplain RequestResponseBodyMethodProcessor}
-     * PathVariable 对map的兼容
      *
      *
      */

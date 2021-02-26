@@ -1,5 +1,6 @@
 package web.handlerAdapter;
 
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
@@ -70,7 +71,7 @@ public class RequestMappingHandlerAdapterStu {
         /**
          * {@linkplain RequestMappingHandlerAdapter#handleInternal(HttpServletRequest, HttpServletResponse, HandlerMethod)}
          *
-         *
+         * 使用解析器{@linkplain HttpMessageConverter}
          */
         public void handleInternal(){
 

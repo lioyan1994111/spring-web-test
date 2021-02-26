@@ -47,4 +47,11 @@ public class TestRest {
         return a;
     }
 
+
+
+    @PostMapping("/param3")
+    public BodyBean param3(@RequestBody BodyBean test) {
+        return test;
+    }
+
 }
