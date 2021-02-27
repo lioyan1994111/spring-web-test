@@ -2,6 +2,9 @@ package web.handlerAdapter;
 
 import org.springframework.beans.factory.config.BeanExpressionResolver;
 import org.springframework.core.MethodParameter;
+import org.springframework.http.HttpInputMessage;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -14,9 +17,7 @@ import org.springframework.web.method.annotation.RequestParamMethodArgumentResol
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.method.annotation.PathVariableMapMethodArgumentResolver;
-import org.springframework.web.servlet.mvc.method.annotation.PathVariableMethodArgumentResolver;
-import org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor;
+import org.springframework.web.servlet.mvc.method.annotation.*;
 
 import javax.servlet.http.Part;
 
@@ -210,7 +211,15 @@ public class HandlerMethodArgumentResolverStu {
     }
     /**
      * {@linkplain RequestResponseBodyMethodProcessor}
+     * 将解析交给 {@linkplain HttpMessageConverter} 进行处理
+     *  这个是默认new出来的
      *
+     *
+     * 其中在注入{@linkplain RequestMappingHandlerAdapter#initControllerAdviceCache()}
+     * 1、被 {@linkplain ControllerAdvice} 注解修饰，
+     * 2、并且是{@linkplain RequestBodyAdvice} 子类
+     * 会被优先执行
+     *  这个允许在解析前修改对象{@linkplain HttpInputMessage}
      *
      */
     public static class RequestResponseBodyMethodProcessorStu{
