@@ -23,4 +23,5 @@ public interface FeignTest {
     public List<String> requestParamMethodArgumentResolverFalse2(@RequestBody TestBean id);
 
 
+
 }

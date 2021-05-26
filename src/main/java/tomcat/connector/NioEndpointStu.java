@@ -1,7 +1,5 @@
 package tomcat.connector;
 
-import com.sun.xml.internal.bind.v2.TODO;
-import org.apache.coyote.http11.AbstractHttp11Protocol;
 import org.apache.tomcat.util.net.*;
 
 import java.nio.channels.SelectionKey;
